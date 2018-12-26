@@ -1,0 +1,2 @@
+Crear el contexto -->
+npm install -g create-react-app .
