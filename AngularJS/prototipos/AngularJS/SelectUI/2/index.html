@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<link href="bootstrap.min.css" rel="stylesheet">
+
+<head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width">
+      <title>Ejemplo de selects con AngulaJS</title>
+</head>
+
+<body ng-controller="selectController">
+      <!-- tipos -->
+      <select ng-model="thingTwo" ng-change="putThings()">
+            <option value="" selected>Seleccionar</option>
+            <option ng-repeat="t in thingsTwo">{{t}}</option>
+      </select>
+      <!-- depende del select -->
+      <select ng-model="thing">
+            <option value="" selected>Seleccionar</option>
+            <option ng-repeat="t in things">{{t}}</option>
+      </select>
+</body>
+
+</html>
+
+<script src="angular.min.js"></script>
+<script src="bootstrap.min.js"></script>
+<script src="jquery-3.3.1.slim.min.js"></script>
+
+<script>
+
+      angular.module('app', [])
+            .controller('selectController', ['$scope', ($scope) => {
+
+                  $scope.thing = '';
+                  $scope.thingTwo = '';
+                  $scope.things = ['Plátano', 'Manzana', 'Pera', 'Durazno', 'Uchua', 'Granadilla'];
+                  $scope.thingsTwo = ['Plátano', 'Manzana', 'Pera', 'Durazno', 'Uchua', 'Granadilla'];
+                  
+
+
+                  $scope.putThings = function () {
+                        
+                        $scope.thing = '';
+                        $scope.things = ['Plátano', 'Manzana', 'Pera', 'Durazno', 'Uchua', 'Granadilla'];
+                        $scope.thingPlace = $scope.things.indexOf($scope.thingTwo);                        
+                        $scope.things.splice($scope.thingPlace, 1);                                   
+                        
+
+                  }
+
+            }]);
+
+</script>

@@ -1,0 +1,48 @@
+<html>
+<link href="bootstrap.min.css" rel="stylesheet">
+
+<form class="form-inline" ng-app="MyApp">
+      <div class="form-group row">
+            <div ng-controller="MyCtrl">
+
+                  <select class="form-control" ng-model="statusselect">
+                        <option ng-selected="{{mode.name == statusselect}}" ng-repeat="mode in storageResult.accessMode"
+                              value="{{mode.name}}" name="accessMode{{$index}}" id="accessMode">
+                              {{mode.name}}
+                        </option>
+                  </select> {{statusselect}}                  
+
+            </div>
+
+      </div>
+</form>
+
+<script src="angular.min.js"></script>
+<script src="bootstrap.min.js"></script>
+<script src="jquery-3.3.1.slim.min.js"></script>
+
+<script>
+
+      angular.module("MyApp", [])
+            .controller("MyCtrl", function ($scope, $filter) {
+                  $scope.storageResult = {
+                        "storageAccount": "Enable",
+                        "user": "sdcard",
+                        "pass": "sdcard",
+                        "wifiIP": "0",
+                        "ipAddr": "0",
+                        "accessMode": [
+                              { "name": "Local Storage", "status": "0" },
+                              { "name": "WiFi Storage", "status": "1" },
+                              { "name": "Internet Storage", "status": "0" }
+                        ]
+                  }
+                  $scope.statusselect = $scope.storageResult["accessMode"][1]["name"]
+            });
+
+</script>
+
+
+
+
+</html>
