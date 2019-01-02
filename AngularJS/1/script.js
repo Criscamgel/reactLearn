@@ -6,7 +6,8 @@ var app = angular.module("computer",['ngRoute'])
     when('/main', {
         templateUrl: 'main.html',
         controller: 'MainCtrl'
-    });
+    }).
+    otherwise({redirectTo:'/main'})
 
 }])
 
