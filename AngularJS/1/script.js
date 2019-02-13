@@ -1,19 +1,9 @@
-var app = angular.module("computer",['ngRoute'])
+var app = angular.module("computerStoreStore",['ngRoute', 'computerStore.services', 'computerStore.about', 'computerStore.contact'])
 
 .config(['$routeProvider', function($routeProvider){
 
-    $routeProvider.
-    when('#/main', {
-        templateUrl: 'main.html',
-        controller: 'MainCtrl'
-    }).
-    otherwise({redirectTo:'/main'})
-
-}])
-
-.controller('MainCtrl', [function(){
-
-    console.log('This is the MainCtrl');
+    $routeProvider.otherwise({redirectTo: '/index.html'})
+    
 
 }])
 
