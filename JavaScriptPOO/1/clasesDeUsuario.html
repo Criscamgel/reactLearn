@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="estilos.css">
+<html>
+  
+
+
+    <div class="grid-container">
+
+
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+
+    </div>
+
+</html>
+<script type="text/javascript">
+    
+    console.log(Math.PI)
+    
+    function Convertidor(){
+    
+    
+    
+    }
+
+    //Métodos
+
+    Convertidor.aRadianes = function (grados){
+
+        return grados * Convertidor.aGrados;
+
+    }
+    Convertidor.aGrados = function (radianes){
+
+        return radianes * Convertidor.aGrados;
+
+    }
+    
+    //Propiedades Estáticas
+    
+    Convertidor.GRADOS_A_RADIANES = Math.PI/180;
+    Convertidor.RADIANES_A_GRADOS = 180/Math.PI;
+    
+    console.log('180 grados son ' + Convertidor.aRadianes(180) + ' Radianes');
+    console.log('2PI radianes son ' + Convertidor.aGrados(2*Math.PI) + ' Grados');
+    
+
+    // ---> Propiedades Públicas
+
+    /*function Persona(dni, nombre) {
+
+        this.dni = dni
+        this.nombre = nombre
+        this._edad = 0;
+
+    }
+
+    var yo = new Persona('123123', 'Camilo')
+    
+    
+
+    console.log(yo._edad)*/
+
+
+
+</script>
