@@ -1,43 +1,27 @@
-    function Convertidor(){
-    
-    
+
+    // ---> Clase Información
+
+    var nombre = document.getElementById("nombre").value
+    var codigo = document.getElementById("codigo").value
+    var color = document.getElementById("color").value
+
+function crearTarjeta(){
+        
+    alert("Hola");
     
     }
 
-    //Métodos
+    function infoTarjeta(nombre, codigo, color) {
 
-    Convertidor.aRadianes = function (grados){
-
-        return grados * Convertidor.aGrados;
-
-    }
-    Convertidor.aGrados = function (radianes){
-
-        return radianes * Convertidor.aGrados;
-
-    }
-    
-    //Propiedades Estáticas
-    
-    Convertidor.GRADOS_A_RADIANES = Math.PI/180;
-    Convertidor.RADIANES_A_GRADOS = 180/Math.PI;
-    
-    console.log('180 grados son ' + Convertidor.aRadianes(180) + ' Radianes');
-    console.log('2PI radianes son ' + Convertidor.aGrados(2*Math.PI) + ' Grados');
-    
-
-    // ---> Propiedades Públicas
-
-    /*function Persona(dni, nombre) {
-
-        this.dni = dni
-        this.nombre = nombre
-        this._edad = 0;
+        this.nombre = nombre;
+        this.codigo = codigo;
+        this.color = color;        
 
     }
 
-    var yo = new Persona('123123', 'Camilo')
-    
-    
+    var tarjeta = new infoTarjeta(document.getElementById("nombre"), document.getElementById("codigo").value, document.getElementById("color"))
 
-    console.log(yo._edad)*/
+    console.log(tarjeta.nombre)
+    console.log(tarjeta.codigo)
+    console.log(tarjeta.color)
+    

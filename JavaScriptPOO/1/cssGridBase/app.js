@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link rel="stylesheet" href="estilos.css">
-<html>
-
-</html>
-<script type="text/javascript">
-    
     function Convertidor(){
-        
+    
+    
     
     }
 
@@ -36,19 +28,16 @@
 
     // ---> Propiedades Públicas
 
-    function Persona(dni, nombre, color) {
+    /*function Persona(dni, nombre) {
 
         this.dni = dni
         this.nombre = nombre
-        this._edad = 0
-        this.color = color
+        this._edad = 0;
 
     }
 
-    var yo = new Persona('123123', 'Camilo', 'azul')   
+    var yo = new Persona('123123', 'Camilo')
+    
+    
 
-    console.log(yo.color)
-
-
-
-</script>   
+    console.log(yo._edad)*/

@@ -1,33 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+//COMPONENTS
+import Bar from './components/bar';
+import Header from './components/header';
 
-
-//Arrow Function const App = () =>{ 
-    //return React.createElement('h1',{className:'title', id:'elId'}, 'Holaa')
-    
-    //Return con un línea --->
-    //return <h1>Hello react !!</h1>
-
-    //Return con varias líneas --->
-    /*return (
-        <div>
-            Header
-        </div>
-    )*/
-
-    //COMPONENTS
-
-    import Header from './components/header'
-
-    const App = () =>{    
+const App = () => {
 
     return (
+
         <div>
-            <Header/>
+            <Bar />
+            <Header />
         </div>
     )
 
 
 }
 
-ReactDOM.render(<App/>,document.querySelector('#root'));
+ReactDOM.render(<App />, document.querySelector('#root'));
