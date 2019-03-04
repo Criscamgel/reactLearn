@@ -43,5 +43,15 @@ header input{
 }
 
 .news_item{
-    background: red;
+    padding: 20px;
+    box-sizing: border-box;
+    border-bottom: solid 1px #000;
+}
+
+.tittle{
+
+    padding: 15px 10px 15px 10px;
+    font-size: 30px;
+    box-sizing: border-box;
+
 }
