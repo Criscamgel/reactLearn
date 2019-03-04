@@ -1,7 +1,15 @@
 @font-face
 {
-    src: url("../fonts/Roboto-Regular.ttf");
-    font-family: roboto;    
+    src: url("../fonts/Roboto/Roboto-Regular.ttf");
+    font-family: roboto; 
+}
+
+@font-face{
+
+    src: url("../fonts/Oswald/Oswald-Regular.ttf");
+    src: url("../fonts/Oswald/Oswald-Bold.ttf");
+    font-family: oswald;   
+
 }
 
 body {
@@ -10,15 +18,16 @@ body {
 }
 
 header {
-    font-family: roboto;
-    background: #305465;
+    font-family: oswald;
+    font-weight: 700;
+    background-image: linear-gradient(to top, #0b191f, #324e5a);    
     text-align: center
 }
 
 .logo{
     color: #fff;
     font-size: 100px;
-    font-family: roboto;
+    font-family: oswald;
 }
 
 header input{
@@ -27,7 +36,7 @@ header input{
 }
 
 .bar{
-    background-color: rgb(177, 177, 255);
+    background-color: #353535;
     text-align: center;
     height: 2rem;
     display: block;

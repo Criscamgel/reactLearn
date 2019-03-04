@@ -6,9 +6,7 @@ class Bar extends Component {
     render() {
 
         return (
-            <bar>
                 <div className="bar"></div>
-            </bar>
         )
     }
 }
