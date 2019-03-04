@@ -41,3 +41,7 @@ header input{
     height: 2rem;
     display: block;
 }
+
+.news_item{
+    background: red;
+}
