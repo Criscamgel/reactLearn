@@ -19,12 +19,16 @@ class App extends Component {
 
     }
 
+    getKeyword = (event) => {
+        console.log(event.target.value)
+    }
+
     render() {
         return (
             
             <div>
                 <Bar />
-                <Header />
+                <Header keywords={this.getKeyword} />
                 <NewsList news={this.state.news}>
                 <h3 className={classes.tittle}>
                     The news are:
