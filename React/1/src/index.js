@@ -15,21 +15,36 @@ class App extends Component {
 
     state = {
 
-        news:JSON 
+        news:JSON,
+        filtered:[] 
 
     }
 
     getKeyword = (event) => {
-        console.log(event.target.value)
+        //console.log(event.target.value)
+        let keyword = event.target.value
+        let filtered = this.state.news.filter((item)=> {
+        return item.title.indexOf(keyword) > -1
+        })
+
+        this.setState({
+            filtered
+        })
+
+        console.log(filtered)
     }
 
     render() {
+
+        let filteredNew = this.state.filtered;
+        let newsOld = this.state.news;
+
         return (
             
             <div>
                 <Bar />
                 <Header keywords={this.getKeyword} />
-                <NewsList news={this.state.news}>
+                <NewsList news={filteredNew.length === 0 ? newsOld : filteredNew}>
                 <h3 className={classes.tittle}>
                     The news are:
                 </h3>
