@@ -14,9 +14,17 @@ import classes from '../src/css/styles.css'
 class App extends Component {
 
     state = {
-
         news:JSON 
+    }
 
+    getKeyword = (event) =>{
+        
+        let keyword = event.target.value
+        let filtered = this.state.news.filter((item)=>{
+
+            return item.title.indexOf(keyword) > -1
+
+        })
     }
 
     render() {
@@ -24,7 +32,7 @@ class App extends Component {
             
             <div>
                 <Bar />
-                <Header />
+                <Header keywords={this.getKeyword}/>
                 <NewsList news={this.state.news}>
                 <h3 className={classes.tittle}>
                     The news are:
