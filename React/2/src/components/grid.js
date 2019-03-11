@@ -1,45 +1,24 @@
-import React, {Component} from 'react';
+import React from 'react';
+import NewGrid from './newgrid'
 import '../css/styles.css'
 import '../css/grid.css'
 
-class Grid extends Component{
+const Grid = (props) =>{
 
-    render(){
-        return(
-        <div class="contenedor">
-            <div class="contenedor-tjt">
-    
-                    <div class="tjt">
-                        <p>Primero</p>
-                        <p>Segundo</p>
-                        <p>Tercero</p>
-                    </div>
-    
-                    <div class="tjt">
-                        <p>Primero</p>
-                        <p>Segundo</p>
-                        <p>Tercero</p>
-                    </div>
-    
-                    <div class="tjt">
-                        <p>Primero</p>
-                        <p>Segundo</p>
-                        <p>Tercero</p>
-                    </div>
-    
-                    <div class="tjt">
-                        <p>Primero</p>
-                        <p>Segundo</p>
-                        <p>Tercero</p>
-                    </div>    
+    return(
+        
+        <div class="contenedor">            
+            <div class="contenedor-tjt">                    
+                    <NewGrid/>
             </div>
 
             <div class="contenedor-info">
 
                 <form>
-                    <input id="nombre" type="text" placeholder="Nombre"/>
-                    <input id="codigo" type="text" placeholder="Codigo"/>
-                    <input id="color" type="text" placeholder="Color"/>
+                    <input id="nombre" onChange={props.names} type="text" placeholder="Nombre"/>
+                    <input id="codigo" onChange={props.codes} type="text" placeholder="Codigo"/>
+                    <input id="color" onChange={props.colors} type="text" placeholder="Color"/>
+                    <div id="btnCrear" onClick="" value="Crear">Crear</div>
                 </form>
 
             </div>
@@ -48,7 +27,5 @@ class Grid extends Component{
 
         )
     }
-
-}
 
 export default Grid;

@@ -14,26 +14,12 @@ import classes from '../src/css/styles.css'
 class App extends Component {
 
     state = {
-<<<<<<< HEAD
-        news:JSON 
-
-    getKeyword = (event) =>{
-        
-        let keyword = event.target.value
-        let filtered = this.state.news.filter((item)=>{
-
-            return item.title.indexOf(keyword) > -1
-=======
 
         news:JSON,
-        filtered:[] 
->>>>>>> 275b23849f649e63630d5421bfb0424211bb5e71
-
-        })
+        filtered:[]         
     }
 
     getKeyword = (event) => {
-        //console.log(event.target.value)
         let keyword = event.target.value
         let filtered = this.state.news.filter((item)=> {
         return item.title.indexOf(keyword) > -1
@@ -42,8 +28,6 @@ class App extends Component {
         this.setState({
             filtered
         })
-
-        console.log(filtered)
     }
 
     render() {
@@ -55,13 +39,8 @@ class App extends Component {
             
             <div>
                 <Bar />
-<<<<<<< HEAD
-                <Header keywords={this.getKeyword}/>
-                <NewsList news={this.state.news}>
-=======
                 <Header keywords={this.getKeyword} />
                 <NewsList news={filteredNew.length === 0 ? newsOld : filteredNew}>
->>>>>>> 275b23849f649e63630d5421bfb0424211bb5e71
                 <h3 className={classes.tittle}>
                     The news are:
                 </h3>
