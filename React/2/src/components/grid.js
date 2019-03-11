@@ -9,7 +9,7 @@ const Grid = (props) =>{
         
         <div class="contenedor">            
             <div class="contenedor-tjt">                    
-                    <NewGrid/>
+                    <NewGrid/>             
             </div>
 
             <div class="contenedor-info">
@@ -22,7 +22,6 @@ const Grid = (props) =>{
                 </form>
 
             </div>
-
         </div>
 
         )

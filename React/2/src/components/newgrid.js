@@ -4,7 +4,7 @@ import '../css/grid.css'
 
 const NewGrid = (props) =>{ 
 
-        console.log("props.names ->" + props.names)
+        console.log("props.names ->" + JSON.stringify(props))
 
         return(
 

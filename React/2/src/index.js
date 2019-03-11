@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 //Components
 import Header from './components/header';
 import Grid from './components/grid';
-import NewGrid from './components/newgrid';
 
 class App extends Component {
 
@@ -36,7 +35,7 @@ class App extends Component {
 
         let color = event.target.value
         console.log("color -->" + color)
-        return color
+        return color;
 
     }
 
@@ -45,7 +44,8 @@ class App extends Component {
         return(
             <div>
                 <Header/>
-                <Grid names={this.getName} codes={this.getCode} colors={this.getColor}></Grid>                    
+                <Grid names={this.getName} codes={this.getCode} colors={this.getColor}></Grid>
+                <h2>{this.getName.name}</h2>                  
             </div>
             
             )
