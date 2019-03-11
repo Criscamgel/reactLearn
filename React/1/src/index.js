@@ -16,8 +16,18 @@ class App extends Component {
     state = {
 
         news:JSON,
-        filtered:[] 
+        filtered:[]         
+    }
 
+    getKeyword = (event) => {
+        let keyword = event.target.value
+        let filtered = this.state.news.filter((item)=> {
+        return item.title.indexOf(keyword) > -1
+        })
+
+        this.setState({
+            filtered
+        })
     }
 
     getKeyword = (event) => {
@@ -55,7 +65,6 @@ class App extends Component {
 
 
 }
-
 
 
 ReactDOM.render(<App />, document.querySelector('#root'));

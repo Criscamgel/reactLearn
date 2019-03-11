@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 //Components
 import Header from './components/header';
 import Grid from './components/grid';
-import NewGrid from './components/newgrid';
 
 class App extends Component {
 
@@ -13,18 +12,31 @@ class App extends Component {
 
     }
 
-    getKeyword = (event) => {
+    getName = (event) => {
         //console.log(event.target.value)
-        let keyword = event.target.value
-        let filtered = this.state.news.filter((item)=> {
-        return item.title.indexOf(keyword) > -1
-        })
+        let name = event.target.value
+        console.log("name -->" + name)
+        return name;
 
-        this.setState({
-            filtered
-        })
+        // this.setState({
+        //     filtered
+        // })
+    }
 
-        console.log(filtered)
+    getCode = (event) => {
+
+        let code = event.target.value
+        console.log("code -->" + code)
+        return code;
+
+    }
+
+    getColor = (event) => {
+
+        let color = event.target.value
+        console.log("color -->" + color)
+        return color;
+
     }
 
     render(){
@@ -32,9 +44,8 @@ class App extends Component {
         return(
             <div>
                 <Header/>
-                <Grid>
-                    <NewGrid/>
-                </Grid>
+                <Grid names={this.getName} codes={this.getCode} colors={this.getColor}></Grid>
+                <h2>{this.getName.name}</h2>                  
             </div>
             
             )
@@ -43,7 +54,5 @@ class App extends Component {
 
 
 }
-
-
 
 ReactDOM.render(<App />, document.getElementById('root'));
