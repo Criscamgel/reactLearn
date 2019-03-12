@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 //Components
 import Header from './components/header';
 import Grid from './components/grid';
+//import PropTypes from 'prop-types'
 
 class App extends Component {
 
@@ -13,29 +14,22 @@ class App extends Component {
     }
 
     getName = (event) => {
-        //console.log(event.target.value)
-        let name = event.target.value
-        console.log("name -->" + name)
-        return name;
-
-        // this.setState({
-        //     filtered
-        // })
+        this.setState({textName: event.target.value})
     }
 
     getCode = (event) => {
-
-        let code = event.target.value
-        console.log("code -->" + code)
-        return code;
+        this.setState({textCode: event.target.value})
 
     }
 
     getColor = (event) => {
+        this.setState({textColor: event.target.value})
 
-        let color = event.target.value
-        console.log("color -->" + color)
-        return color;
+    }
+
+    created = () => {
+
+        console.log("Hola")
 
     }
 
@@ -44,13 +38,25 @@ class App extends Component {
         return(
             <div>
                 <Header/>
-                <Grid names={this.getName} codes={this.getCode} colors={this.getColor}></Grid>
-                <h2>{this.getName.name}</h2>                  
+                <Grid 
+                names={this.getName}
+                nombre={this.state.textName}
+                codes={this.getCode}
+                codigo={this.state.textCode}
+                colors={this.getColor}
+                color={this.state.textColor}
+                createds={this.created}                
+                />                                 
             </div>
             
             )
 
     }
+
+    /*App.propTypes = {
+
+
+    }*/
 
 
 }

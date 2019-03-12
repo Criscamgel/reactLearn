@@ -1,20 +1,21 @@
-import React from 'react'
+import React, {Component} from 'react';
 import '../css/styles.css'
 import '../css/grid.css'
 
-const NewGrid = (props) =>{ 
+class NewGrid extends Component{
 
-        console.log("props.names ->" + JSON.stringify(props))
+    render(){
 
         return(
 
-            <div class="tjt">
-                <p></p>
-                <p></p>
-                <p></p>
+            <div className="tjt">
+                <p>{this.props.nombre}</p>
+                <p>{this.props.codigo}</p>
+                <p>{this.props.color}</p>
             </div>
 
         )    
     }
+}
 
 export default NewGrid;

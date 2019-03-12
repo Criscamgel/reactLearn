@@ -1,24 +1,26 @@
-import React from 'react';
+import React, {Component} from 'react';
 import NewGrid from './newgrid'
 import '../css/styles.css'
 import '../css/grid.css'
 
-const Grid = (props) =>{
+class Grid extends Component{
 
-    return(
+    render (){
         
-        <div class="contenedor">            
-            <div class="contenedor-tjt">                    
-                    <NewGrid/>             
+        return(
+       
+        <div className="contenedor">       
+            <div className="contenedor-tjt">   
+                    <NewGrid nombre={this.props.nombre} codigo={this.props.codigo} color={this.props.color}/>  
             </div>
 
-            <div class="contenedor-info">
+            <div className="contenedor-info">
 
                 <form>
-                    <input id="nombre" onChange={props.names} type="text" placeholder="Nombre"/>
-                    <input id="codigo" onChange={props.codes} type="text" placeholder="Codigo"/>
-                    <input id="color" onChange={props.colors} type="text" placeholder="Color"/>
-                    <div id="btnCrear" onClick="" value="Crear">Crear</div>
+                    <input id="nombre" onChange={this.props.names} type="text" placeholder="Nombre"/>
+                    <input id="codigo" onChange={this.props.codes} type="text" placeholder="Codigo"/>
+                    <input id="color" onChange={this.props.colors} type="text" placeholder="Color"/>
+                    <div id="btnCrear" onClick={this.props.createds} value="Crear">Crear</div>
                 </form>
 
             </div>
@@ -26,5 +28,7 @@ const Grid = (props) =>{
 
         )
     }
+
+}
 
 export default Grid;
