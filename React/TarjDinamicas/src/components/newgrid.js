@@ -9,6 +9,7 @@ class NewGrid extends Component{
         return(
 
             <div className="tjt">
+                <p>{this.props.initList[0].nombre}</p>
                 <p>{this.props.nombre}</p>
                 <p>{this.props.codigo}</p>
                 <p>{this.props.color}</p>

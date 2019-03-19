@@ -11,7 +11,7 @@ class Grid extends Component{
        
         <div className="contenedor">       
             <div className="contenedor-tjt">   
-                    <NewGrid nombre={this.props.nombre} codigo={this.props.codigo} color={this.props.color}/>  
+                    <NewGrid initList = {this.props.initList} nombre={this.props.nombre} codigo={this.props.codigo} color={this.props.color}/>
             </div>
 
             <div className="contenedor-info">

@@ -7,7 +7,7 @@ import NewsList from './components/news_list';
 //JSON
 import JSON from './db.json';
 //CSS
-import classes from '../src/css/styles.css'
+import classes from '../src/css/styles.css';
 
 
 
