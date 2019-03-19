@@ -2,21 +2,23 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route } from 'react-router-dom';
 //Component
-import component from 'posts';
-
-
+import Post from './components/post';
+import Profiles from './components/profiles';
 
 const App = () =>{
 
     return(
-        <div>Home</div>
+        <BrowserRouter>
+            <div>
+                <Route path="/post" components={Post}/>
+                <Route path="/profiles" components={Profiles}/>
+            </div>
+        </BrowserRouter>
     )
 
 }
 
 ReactDOM.render(
-    <App/>
-    <Posts/>
-    ,
+    <App/>,
     document.querySelector('#root')
 )
