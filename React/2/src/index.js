@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route, NavLink } from 'react-router-dom';
+import { BrowserRouter, Route, NavLink, Switch } from 'react-router-dom';
 //Components
+import notFound from './components/notFound';
 import Home from './components/home';
 import Post from './components/post';
 import Profiles from './components/profiles';
 import PostItem from './components/posts_item';
+import Life from './components/lifeCycles';
 
 const App = () =>{
 
@@ -24,12 +26,18 @@ const App = () =>{
                     hash:'#francis',
                     search:'?profile=true'
                 }}>Profiles</NavLink><br/>
+                <NavLink to="/life">Life</NavLink>
                 <hr/>
+                
             </header>
-                <Route path="/" exact component={Home}/>
-                <Route path="/posts" exact component={Post}/>
-                <Route path="/posts/:id/:username" component={PostItem}/>
-                <Route path="/profiles" component={Profiles}/>
+                <Switch>                                     
+                    <Route path="/posts/:id/:username" component={PostItem}/>
+                    <Route path="/profiles" component={Profiles}/>
+                    <Route path="/life" component={Life}/>
+                    <Route path="/posts" component={Post}/>
+                    <Route path="/" exact component={Home}/>
+                    <Route component={notFound}/>
+                </Switch>
             </div>
         </BrowserRouter>
     )
