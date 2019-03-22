@@ -8,6 +8,7 @@ import Post from './components/post';
 import Profiles from './components/profiles';
 import PostItem from './components/posts_item';
 import Life from './components/lifeCycles';
+import Conditional from './components/conditional';
 
 const App = () =>{
 
@@ -26,7 +27,8 @@ const App = () =>{
                     hash:'#francis',
                     search:'?profile=true'
                 }}>Profiles</NavLink><br/>
-                <NavLink to="/life">Life</NavLink>
+                <NavLink to="/life">Life</NavLink><br/>
+                <NavLink to="/conditional">Conditional</NavLink>
                 <hr/>
                 
             </header>
@@ -35,7 +37,8 @@ const App = () =>{
                     <Route path="/profiles" component={Profiles}/>
                     <Route path="/life" component={Life}/>
                     <Route path="/posts" component={Post}/>
-                    <Route path="/" exact component={Home}/>
+                    <Route path="/conditional" component={Conditional}/>
+                    <Route path="/" exact component={Home}/>                    
                     <Route component={notFound}/>
                 </Switch>
             </div>
