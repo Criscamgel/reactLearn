@@ -1,9 +1,57 @@
-import React, {Component} from 'react';
-import NewGrid from './newgrid'
+import React, { Component } from 'react';
 import '../css/styles.css'
 import '../css/grid.css'
 
 class Grid extends Component{
+
+    state = {
+        items:[{
+            nombre:"Camilo",
+            codigo:"1234",
+            color:"blue"
+
+        }]
+    }
+
+    getName = (event)=>{return event.target.value;}
+    getCode = (event)=>{return event.target.value;}
+    getColor = (event)=>{return event.target.value;}
+
+    addElement () {
+        return this.state.items.map((item, i) =>(
+
+            <div className="tjt" key={i}>                
+                <p>{item.nombre}</p>
+                <p>{item.codigo}</p>
+                <p>{item.color}</p>
+            </div>
+        ))
+    }
+
+    generateElement () {
+
+        let newElement = {
+                nombre:this.getName,
+                codigo:this.getCode,
+                color:this.getColor
+            }
+        let newArray = this.state.items.push(newElement);
+
+        this.setState({
+                items:newArray
+            })
+
+    }
+
+    removeElement(){
+
+        let newArray = this.state.items.slice(0, -1);
+
+        this.setState({
+            items:newArray
+        })
+
+    }
 
     render (){
         
@@ -11,16 +59,17 @@ class Grid extends Component{
        
         <div className="contenedor">       
             <div className="contenedor-tjt">   
-                    <NewGrid initList = {this.props.initList} nombre={this.props.nombre} codigo={this.props.codigo} color={this.props.color}/>
+                    {this.addElement()}
             </div>
 
             <div className="contenedor-info">
 
                 <form>
-                    <input id="nombre" onChange={this.props.names} type="text" placeholder="Nombre"/>
-                    <input id="codigo" onChange={this.props.codes} type="text" placeholder="Codigo"/>
-                    <input id="color" onChange={this.props.colors} type="text" placeholder="Color"/>
-                    <div id="btnCrear" onClick={this.props.createds} value="Crear">Crear</div>
+                    <input id="nombre" onChange={this.getName} type="text" placeholder="Nombre"/>
+                    <input id="codigo" onChange={this.getCode} type="text" placeholder="Codigo"/>
+                    <input id="color" onChange={this.getColor} type="text" placeholder="Color"/>
+                    <div id="btnCrear" onClick={()=>this.generateElement()} value="Crear">Crear</div>
+                    <div id="btnBorrar" onClick={()=>this.removeElement()} value="Eliminar">Eliminar</div>
                 </form>
 
             </div>

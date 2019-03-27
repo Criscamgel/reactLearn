@@ -86,3 +86,10 @@ div#btnCrear{
     background-color: #333;
     margin-top: 2em;
 }
+
+div#btnBorrar{
+
+    font-size: 12px;
+    background-color: #a02929;
+    margin-top: 2em;
+}

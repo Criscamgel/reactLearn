@@ -16,15 +16,13 @@ class Slide extends Component{
     generateNumber(){
         let newArray = [...this.state.items,Math.floor(Math.random() * 100) + 1]
 
-        this.setState(
-            {
+        this.setState({
                 items:newArray
-            }
-        )
+            })
     }
 
     removeNumber(){
-        let newArray = this.state.items.slice(0.-1);
+        let newArray = this.state.items.slice(0, -1);
         this.setState({
             items:newArray
         })
