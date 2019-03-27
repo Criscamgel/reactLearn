@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import '../css/styles.css'
 import '../css/grid.css'
+import { get } from 'https';
 
 class Grid extends Component{
-
+    
     state = {
         items: [],
         item: {}
@@ -11,11 +12,6 @@ class Grid extends Component{
 
     componentDidMount() {
         const { items } = this.state
-        items.push({
-            nombre:"Camilo",
-            codigo:"1234",
-            color:"blue"
-        })
         this.setState({ items })
     }
 
@@ -27,11 +23,11 @@ class Grid extends Component{
         this.setState({ item })
     }
 
-    addElement () {
+    addElement () {        
 
         return this.state.items.map((item, i) =>(
 
-            <div className="tjt" key={i}>                
+            <div className="tjt" key={i} style={{backgroundColor:item.color}}>                
                 <p>{item.nombre}</p>
                 <p>{item.codigo}</p>
                 <p>{item.color}</p>
@@ -42,7 +38,11 @@ class Grid extends Component{
     generateElement () {
         const items = [...this.state.items]      
         items.push(this.state.item);
-        this.setState({ items, item: {} })
+        this.setState({ items, item: {
+            nombre:"",
+            codigo:"",
+            color: ""
+        } })
     }
 
     removeElement(){
@@ -55,8 +55,8 @@ class Grid extends Component{
 
     }
 
-    render (){
-        const { item } = this.state        
+    render (){            
+        const { item } = this.state       
         return(
        
         <div className="contenedor">       
