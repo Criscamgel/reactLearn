@@ -5,19 +5,30 @@ import '../css/grid.css'
 class Grid extends Component{
 
     state = {
-        items:[{
+        items: [],
+        item: {}
+    }
+
+    componentDidMount() {
+        const { items } = this.state
+        items.push({
             nombre:"Camilo",
             codigo:"1234",
             color:"blue"
-
-        }]
+        })
+        this.setState({ items })
     }
 
-    getName = (event)=>{return event.target.value;}
-    getCode = (event)=>{return event.target.value;}
-    getColor = (event)=>{return event.target.value;}
+    //Recibiendo el value de cada input
+
+    getTexts = (event, key) => {
+        const item = {...this.state.item}
+        item[key] = event.target.value;
+        this.setState({ item })
+    }
 
     addElement () {
+
         return this.state.items.map((item, i) =>(
 
             <div className="tjt" key={i}>                
@@ -29,18 +40,9 @@ class Grid extends Component{
     }
 
     generateElement () {
-
-        let newElement = {
-                nombre:this.getName,
-                codigo:this.getCode,
-                color:this.getColor
-            }
-        let newArray = this.state.items.push(newElement);
-
-        this.setState({
-                items:newArray
-            })
-
+        const items = [...this.state.items]      
+        items.push(this.state.item);
+        this.setState({ items, item: {} })
     }
 
     removeElement(){
@@ -54,7 +56,7 @@ class Grid extends Component{
     }
 
     render (){
-        
+        const { item } = this.state        
         return(
        
         <div className="contenedor">       
@@ -65,9 +67,9 @@ class Grid extends Component{
             <div className="contenedor-info">
 
                 <form>
-                    <input id="nombre" onChange={this.getName} type="text" placeholder="Nombre"/>
-                    <input id="codigo" onChange={this.getCode} type="text" placeholder="Codigo"/>
-                    <input id="color" onChange={this.getColor} type="text" placeholder="Color"/>
+                    <input id="nombre" onChange={event => this.getTexts(event, 'nombre')} type="text" placeholder="Nombre" value={item.nombre}/>
+                    <input id="codigo" onChange={event => this.getTexts(event, 'codigo')} type="text" placeholder="Codigo"  value={item.codigo}/>
+                    <input id="color" onChange={event => this.getTexts(event, 'color')} type="text" placeholder="Color"  value={item.color}/>
                     <div id="btnCrear" onClick={()=>this.generateElement()} value="Crear">Crear</div>
                     <div id="btnBorrar" onClick={()=>this.removeElement()} value="Eliminar">Eliminar</div>
                 </form>
