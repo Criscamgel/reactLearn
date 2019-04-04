@@ -6,7 +6,7 @@ import { BrowserRouter, Route, Link } from 'react-router-dom';
 import CSStransition from './component/CSStransition';
 import Tgroup from './component/tgroup';
 import TransitionComp from './component/Transition';
-import User from './component/user_template';
+import User from './component/user';
 
 const App = () => {
 

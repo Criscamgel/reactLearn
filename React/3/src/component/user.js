@@ -5,9 +5,14 @@ import UserTemplate from './user_template';
 class User extends Component {
 
     state = {
-        name:'Francis',
+        name:'Camilo',
         lastname:'Jones',
-        age: 25
+        age: 25,
+        hobbies:['run', 'jump'],
+        spanish:true,
+        message(){console.log('hey')},
+        car:{brand:"Kia", model:"Celerio"},
+        mother:"Luna"
     }
 
     render(){
