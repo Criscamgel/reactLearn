@@ -21,7 +21,7 @@ UserTemplate.propTypes = {
     car:PropTypes.objectOf(PropTypes.string),
     //mother:PropTypes.string.isRequired
     mother:function(props,propName, componentName){
-        if(props[propName] !== 'Jane'){
+        if(props[propName] !== 'Luna'){
             return new Error(`The same ${props[propName]} is incorrect`)
         }
     }
