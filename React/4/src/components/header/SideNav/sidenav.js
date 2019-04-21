@@ -1,23 +1,21 @@
 import React from 'react';
 import Sidenav from 'react-simple-sidenav';
+import SideNavItems from './sidenav_items';
 
 const SideNavigation = (props) => {
 
     return (
         <div>
              <Sidenav             
-                onHidenav= {props.onHidenav} 
+                onHideNav= {props.onHideNav} 
                 showNav= {props.showNav}
                 navStyle={{
                     background:'#242424',
-                    maxWith:'220px',
+                    maxWith:'220px'
 
                 }}
              >
-                 <div>Home</div>
-                 <div>Home</div>
-                 <div>Home</div>
-                 <div>Home</div>
+                 <SideNavItems/>
              </Sidenav>
         </div>
     )

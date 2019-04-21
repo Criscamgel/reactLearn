@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './layout.css';
 import Header from '../../components/header/header';
 import Home from '../../components/home/home'
+import Footer from '../../components/home/footer';
 
 class Layout extends Component{
     state= {
@@ -22,11 +23,10 @@ class Layout extends Component{
             <div>
                 <Header
                     showNav={this.state.showNav}
-                    onHidenav={() => this.toggleSidenav(false)}
+                    onHideNav={() => this.toggleSidenav(false)}
                     onOpenNav={() => this.toggleSidenav(true)}
                 />
-                {this.props.children}
-                Footer
+                <Footer/>
                 <Home/>
             </div>
         )
