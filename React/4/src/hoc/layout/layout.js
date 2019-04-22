@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './layout.css';
 import Header from '../../components/header/header';
 import Home from '../../components/home/home'
-import Footer from '../../components/home/footer';
+import Footer from '../../components/footer/footer';
 
 class Layout extends Component{
     state= {
