@@ -65,6 +65,6 @@ const SideNavItems = () => {
 
     )
 
-}
+}   
 
 export default SideNavItems;
