@@ -1,20 +1,15 @@
-import React, { Component } from 'react';
-import Listado from './Listado';
+import React,{Component} from 'react';
 
-class Post extends Component {
-    state = {}
+export default class post extends Component {
+
     render() {
+        const {id, title} = this.props.info;
         return (
-            <div>
-                <div className="contPost">
-                    <div className="tituloPost"><p>Desde Post</p></div>
-                </div>
-                <div className="contListado">
-                    <Listado posts={this.props.posts} />
-                </div>
-            </div>
-        )
+            <tr>
+                <td>{id}</td>
+                <td>{title}</td>
+                <td><Link to={`/post/${id}`}/></td>
+            </tr>
+        );
     }
 }
-
-export default Post;

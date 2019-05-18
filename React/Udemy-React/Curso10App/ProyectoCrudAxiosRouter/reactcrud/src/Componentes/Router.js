@@ -3,7 +3,7 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import axios from 'axios';
 import Header from './Header';
 import Navegacion from './Navegacion';
-import Post from './Post';
+import Posts from './Posts';
 
 class Router extends Component {
     state = {
@@ -32,7 +32,7 @@ class Router extends Component {
             <Switch>
                 <Route exact="/" render={() => {
                     return(
-                        <Post posts={this.state.posts}/>
+                        <Posts posts={this.state.posts}/>
                     )
                 }}></Route>
             </Switch>
