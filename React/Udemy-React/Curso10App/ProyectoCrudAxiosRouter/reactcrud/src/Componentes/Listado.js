@@ -26,9 +26,9 @@ class Listado extends Component {
             <table className="table">
             <thead>
                 <tr>
-                    <th scope="col">Id</th>
-                    <th scope="col">Titulo</th>
-                    <th scope="col">Acciones</th>
+                    <th className="" scope="col">Id</th>
+                    <th className="text-center" scope="col">Titulo</th>
+                    <th className="" scope="col">Acciones</th>
                 </tr>
                 </thead>
 
