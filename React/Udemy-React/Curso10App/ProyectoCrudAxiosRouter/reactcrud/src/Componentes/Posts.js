@@ -6,11 +6,11 @@ class Post extends Component {
     render() {
         return (
             <div>
-                <div className="contPost">
-                    <div className="tituloPost"><p>Encuentra acá los post...</p></div>
-                </div>
                 <div className="contListado">
-                    <Listado posts={this.props.posts} />
+                    <Listado 
+                    posts={this.props.posts}
+                    borrarPost={this.props.borrarPost}
+                     />
                 </div>
             </div>
         )
