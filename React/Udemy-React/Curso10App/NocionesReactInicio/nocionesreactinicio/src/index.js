@@ -1,16 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import './Css/index.css';
+import Firstcomponent from './Componentes/Firstcomponent';
 
-//React sin JSX
+ReactDOM.render(<Firstcomponent/>, document.getElementById('root'));
 
-const titulo = React.createElement(
-    'h1',
-    {id: 'titulo', className: 'encabezado'},
-    'Hola Mundo'
-)
-
-ReactDOM.render(titulo, document.getElementById('root'));
-serviceWorker.unregister();
