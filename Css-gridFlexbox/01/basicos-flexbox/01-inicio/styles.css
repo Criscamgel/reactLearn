@@ -34,15 +34,34 @@ h2 {
     flex-flow: row wrap;
 }
 
-.elemento-flex {
+.elemento-flex{
     padding: 10px;
+}
+
+.elemento-flex:nth-child(1) {
+    /* Cambiar el orden de los elementos */
+    order: 3;
     background-color: #E53935;
 }
 
 .elemento-flex:nth-child(2) {
+    order: -1;
     background-color: #8E24AA;
 }
 
 .elemento-flex:nth-child(3) {
+    order: 2;
     background-color: #3F51B5;
+}
+
+@media screen and (min-width:768px){
+    .elemento-flex:nth-child(3){
+        order:-1;
+        background-color: #3F51B5;
+    }
+
+    .elemento-flex:nth-child(2){
+        order:3;
+        background-color: #8E24AA;
+    }
 }
