@@ -36,32 +36,31 @@ h2 {
 
 .elemento-flex{
     padding: 10px;
+    flex-grow:1;
+
+    /* Flex Toma tres parametros: 1) flex-grow 2) flex-shrink 3) flex-basic */
+    flex: 1 1 300px;
 }
 
 .elemento-flex:nth-child(1) {
     /* Cambiar el orden de los elementos */
-    order: 3;
+    /* order: 0; */
     background-color: #E53935;
 }
 
 .elemento-flex:nth-child(2) {
-    order: -1;
     background-color: #8E24AA;
+    /* Hacer crecer los elementos, que ocupen el especio faltante */
+    /* flex-grow:2; */
+
+    /* Disminuye los elmentos */
+    /* flex-shrink: 0;
+    flex-grow: 0; */
+
+    /* ocupa al menos (El mínimo) el 50% */
+    /* flex-basis: 50%; */
 }
 
 .elemento-flex:nth-child(3) {
-    order: 2;
-    background-color: #3F51B5;
-}
-
-@media screen and (min-width:768px){
-    .elemento-flex:nth-child(3){
-        order:-1;
-        background-color: #3F51B5;
-    }
-
-    .elemento-flex:nth-child(2){
-        order:3;
-        background-color: #8E24AA;
-    }
+    background-color: #3F51B5;    
 }
