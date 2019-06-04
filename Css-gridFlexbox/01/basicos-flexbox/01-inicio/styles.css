@@ -32,25 +32,52 @@ h2 {
     flex-wrap: wrap-reverse;
     /* Flex flow Hacer lo mismo en la dos propiedades anteriores pero ahora en una */
     flex-flow: row wrap;
-}
+
+    /* Alinear elementos Horizontalmente ----------------->*/
+
+    /* Comienza de Derecha a Izquierda */
+    /* justify-content: flex-start; */
+    justify-content: flex-end;
+
+    /* Centrar los elementos todos juntos */
+    /* justify-content: center; */
+
+    /* Centrar los elementos en el espacio disponible, todos separados */
+    /* justify-content: space-around; */
+
+    /* Centrar los elementos en el espacio disponible, todos separados, restando el espacio de la izquierda */
+    justify-content: space-between;
+
+    /* Alinear elementos Verticalmente ------------------->*/
+
+    height:400px;
+    /* align-items: flex-start; */
+    /* align-items: flex-end;*/
+     /* align-items: baseline; */
+    align-items: center;
+
+}     
 
 .elemento-flex{
     padding: 10px;
-    flex-grow:1;
+    background-color: #E53935;
+    /* flex-grow:1; */
 
     /* Flex Toma tres parametros: 1) flex-grow 2) flex-shrink 3) flex-basic */
-    flex: 1 1 300px;
+    /* flex: 1 1 300px; */
 }
 
 .elemento-flex:nth-child(1) {
     /* Cambiar el orden de los elementos */
     /* order: 0; */
     background-color: #E53935;
+    align-self: flex-start;
+    align-items: baseline;
 }
 
 .elemento-flex:nth-child(2) {
     background-color: #8E24AA;
-    /* Hacer crecer los elementos, que ocupen el especio faltante */
+    /* Hacer crecer los elementos, que ocupen el espacio faltante */
     /* flex-grow:2; */
 
     /* Disminuye los elmentos */
@@ -59,8 +86,10 @@ h2 {
 
     /* ocupa al menos (El mínimo) el 50% */
     /* flex-basis: 50%; */
+    align-self: flex-end;
 }
 
 .elemento-flex:nth-child(3) {
-    background-color: #3F51B5;    
+    background-color: #3F51B5;
+    align-self: initial;    
 }
