@@ -119,7 +119,7 @@ function App() {
     guardarCita(nuevasCitas)
   }
 
-  //Sustituto en Hooks a componenDidMount
+  //Sustituto en Hooks a componenDidMount y componenDidUpdate
   useEffect(()=> {
     let citasIniciales = JSON.parse(localStorage.getItem('citas'))
     if(citasIniciales){
