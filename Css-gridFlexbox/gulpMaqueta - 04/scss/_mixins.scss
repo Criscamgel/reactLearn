@@ -1,0 +1,65 @@
+/* Botones */
+@mixin boton($color) {
+        background-color: $color;
+        padding: .5rem 1rem;
+        display: block;
+        margin-top: 1rem;
+        text-align: center;
+        color: $blanco;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 600;
+}
+
+@mixin box-sizing($box-model){
+    box-sizing: $box-model;
+}
+
+@mixin background-imagen($imagen){
+    background-image: url($imagen);
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+@mixin telefono {
+    @media only screen and (min-width: #{$telefono}){
+        /* Para que no tenga errores va a contener lo que se invoque*/
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media only screen and (min-width: #{$tablet}){
+        /* Para que no tenga errores va a contener lo que se invoque*/
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media only screen and (min-width: #{$desktop}){
+        /* Para que no tenga errores va a contener lo que se invoque*/
+        @content;
+    }
+}
+
+@mixin gradiente($color1, $color2) {
+    background: linear-gradient(to right, $color1 0%, $color2 100%);
+}
+
+/* Menus de navegación */
+
+@mixin menus() {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    flex: 1;
+    @include desktop(){
+        flex: 0 1 calc(30% - 1rem);
+    }
+    a{
+        color: $negro;
+        /* Quitar la decoración al enlace */
+        text-decoration: none;
+        margin-bottom: .5rem;
+    }
+}

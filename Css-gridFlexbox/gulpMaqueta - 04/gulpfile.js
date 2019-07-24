@@ -16,6 +16,16 @@ function css(){
 
 }
 
+// Cada vez que hagas un cambio vas a ejecutar el paso de css a scss
+
+function watchFiles(){
+    gulp.watch('./scss/*.scss', css)
+    /* gulp.watch('index.html') */
+}
+
 //Registrar funciones como tareas
 
 gulp.task('css', css)
+//Hacer las dos tareas watch en paralelo
+/* gulp.task('watch', gulp.parallel(watchFiles)) */
+gulp.task('watch', watchFiles)
